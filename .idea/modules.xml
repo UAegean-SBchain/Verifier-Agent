@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssi-ear/ssi-ear.iml" filepath="$PROJECT_DIR$/ssi-ear/ssi-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssi-ejb/ssi-ejb.iml" filepath="$PROJECT_DIR$/ssi-ejb/ssi-ejb.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssiKeycloak.iml" filepath="$PROJECT_DIR$/ssiKeycloak.iml" />
     </modules>
   </component>

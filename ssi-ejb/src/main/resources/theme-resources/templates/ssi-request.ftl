@@ -80,7 +80,7 @@
 
 
 
-<div class="row container" style="margin-top: 3rem;">
+<div class="row " style="margin-top: 3rem;">
 
         <div class="col">
                 <div class="row ">
@@ -128,29 +128,29 @@
             
                 <div class="row">
                     <h6 id="uPortMessage" class="jsx-402463621">
-                       The Service <b> ${clientId} </b> is requesting to connect your uPort wallet:
+                       The Service  ""<b> ${clientId} </b>"" is requesting to connect your uPort wallet
                     </h6>
                 </div>
                 <div class="row">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr style="background-color: lightgray;">
-                                <th>#</th>
+
                                 <th>Requested Permissions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>0</td>
-                                <td>Push Notifications</td>
+
+                                <td>Receive Push Notifications</td>
                                 
                                 
                             </tr>
                                 <#list scopes as scope>
                                     <#if scope != "openid">
                                         <tr>
-                                            <td>${scope?counter}</td>
-                                            <td>${scope}</td>
+
+                                            <td>Provide ${scope} attributes</td>
                                         </tr>
                                     </#if>
                                 </#list>

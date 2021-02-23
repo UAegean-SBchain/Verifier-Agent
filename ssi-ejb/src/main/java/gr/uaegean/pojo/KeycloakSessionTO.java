@@ -38,5 +38,6 @@ public class KeycloakSessionTO implements Serializable {
     private String scope;
     private String realm;
     private String nonce;
+    private String responseMode;
 
 }

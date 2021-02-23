@@ -64,7 +64,8 @@
                             <div   class="col s12 ">
                                 <div class="row">
                                     <p  class="col s12">
-                                        <b>Transfer your Famility Status Certificat</b>: Your Family Status Certificate will be request (via the Ministry of Education). Please provide the following info to proceed). 
+                                        <b>
+                                        Μεταφέρετε πληροφορίες απο το Μητρωο Πολιτών.
                                     </p>
                                 </div>
                                 <form  id="mitroForm" action=${forward} method="post">
@@ -73,37 +74,37 @@
                                     </div>
 
                                     <div class="row">
-                                        <label class="col l1 s12" for="firstname">First Name (Greek):</label>
+                                        <label class="col l1 s12" for="firstname">Όνομα:</label>
                                         <input class="col l7 s12"  name="firstname" type="text" id="firstname"/> 
                                     </div>
                                     <div class="row">
-                                        <label class="col l1 s12" for="lastname">Last Name (Greek):</label>
+                                        <label class="col l1 s12" for="lastname">Επώνυμο:</label>
                                         <input class="col l7 s12"  name="lastname" type="text" id="lastname"/> 
                                     </div>
                                     <div class="row">
-                                        <label class="col l1 s12" for="fathername">Father's Name (Greek):</label>
+                                        <label class="col l1 s12" for="fathername">Πατρώνυμο:</label>
                                         <input class="col l7 s12"  name="fathername" type="text" id="fathername"/> 
                                     </div>
                                     <div class="row">
-                                        <label class="col l1 s12" for="mothername">Mother's Name (Greek):</label>
+                                        <label class="col l1 s12" for="mothername">Μητρώνυμο:</label>
                                         <input class="col l7 s12"  name="mothername" type="text" id="mothername"/> 
                                     </div>
                                     <div class="row">
-                                        <label class="col l1 s12" for="birthdate">Birth Date (4 digits):</label>
+                                        <label class="col l1 s12" for="birthdate">Ημερομηνία Γέννησης (π.χ. 30101990) :</label>
                                         <input class="col l7 s12"  name="birthdate" type="text" id="birthdate"/> 
                                     </div>
                                     
                                       <div class="row">
-                                        <label class="col l1 s12" for="amka">AMKA Number:</label>
+                                        <label class="col l1 s12" for="amka">AMKA:</label>
                                         <input class="col l7 s12"  name="amka" type="text" id="amka"/> 
                                     </div>
             
                                     <input type="hidden" id="sessionId" name="sessionId" value=${sessionId} />
                                     <div class="row" id="buttons">
                                         <button type="button" onclick="onCancelClick()" class="col s12 m4 l4 waves-effect waves-light btn-large swell-btn cancel-btn" style="margin-right: 2em;">
-                                            Cancel
+                                            Ακύρωση
                                         </button>
-                                        <button  type="button" onclick="onNextClick()" class= "col s12 m4 l4 waves-effect waves-light btn-large swell-btn next-btn" value="Submit">Submit</button>
+                                        <button  type="button" onclick="onNextClick()" class= "col s12 m4 l4 waves-effect waves-light btn-large swell-btn next-btn" value="Submit">Υποβολήn</button>
                                     </div>
                                     <div class="row" id="preloader" style="display:none">
                                         <div class="progress">

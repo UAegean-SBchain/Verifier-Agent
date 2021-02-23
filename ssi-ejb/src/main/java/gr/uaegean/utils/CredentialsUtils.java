@@ -21,10 +21,42 @@ public class CredentialsUtils {
     private static EthereumService ETH_SERV = new EthereumServiceImpl();
 
     public static VerifiedClaims getClaimsFromVerifiedArray(VerifiableCredential credential) {
-        VerifiedClaims vc = credential.getVerified()[0].getClaims();
-        boolean result = ETH_SERV.checkRevocationStatus(vc.getId());
+        boolean result = ETH_SERV.checkRevocationStatus(getCredentialId(credential));
         log.info("Revocation List result {} !!!!!!!!", result);
         return credential.getVerified()[0].getClaims();
     }
+
+    private static String getCredentialId(VerifiableCredential cred){
+        VerifiedClaims vc = cred.getVerified()[0].getClaims();
+
+        if(vc.getId() != null){
+            return vc.getId();
+        }else{
+            if(vc.getTaxisId()!= null){
+                return vc.getTaxisId().getMetadata().getId();
+            }
+            if(vc.getCivilRegistryId() != null){
+                return vc.getCivilRegistryId().getMetadata().getId();
+            }
+            if(vc.getEBillId() != null){
+                return vc.getEBillId().getMetadata().getId();
+            }
+            if(vc.getFStatus() != null){
+                return vc.getFStatus().getMetadata().getId();
+            }
+            if(vc.getContact() != null){
+                return vc.getContact().getMetadata().getId();
+            }
+
+            if(vc.getDeclaration() != null){
+                return vc.getDeclaration().getMetadata().getId();
+            }
+
+
+        }
+
+        return "1";
+    }
+
 
 }

@@ -1,43 +1,13 @@
-# FIDO U2F Authenticator for Keycloak
+# SBchain Verifier Agent
 
-## Notes
+The SBchain Verifier Agent has been built as a Keycloak plugin. Keycloak is an open source software product that allows single sign-on with Identity and Access Management. Specifically Keycloak supports both OIDC and SAML and is capable of acting as a fully functional industrial ready Identity Management Server (IdMs). Keycloak supports the creation and installment of various plugins that intervene in the normal authentication flow of a user. Specifically, through the use of these plugins (referred to as Service Provider Interfaces or SPIs) various means of user authentications mechanisms can be deployed.
 
-* Requires HTTPS. U2F will fail otherwise
+In detail, the SBchain Verifier Agent plugin implements authentication flows that interrupt the normal OIDC flow to request form the user the presentation of (some of) the following Verifiable Credentials, issued by the SBchain VC Issuer service (D4.3):
+* TAXIS ID
+* Civil Registry ID
+* Electricity Bill ID
+* Personal Financial Status
+* Contact Me
+* KEA - Personal Declaration
 
-## TODO
-
-* Allow user to manage registrations through account management console
-* Attestation - allow specifying what devices should be supported 
-* Metadata - allow users to view metadata about registered devices
-* Allow admin to view details about registered devices
-
-## Usage
-
-1. Deploy to Keycloak:
-
-    mvn clean install wildfly:deploy
-
-2. Login to admin console and create authentication flow with U2F
-
-   * Go to Authentication
-   * Under Flows select Browser and click Copy
-   * Remove OTP Form under Copy Of Browser Forms and add U2F in same place
-   * Mark U2F as optional
-   * Click Bindings and switch Browser Flow to Copy of browser
-   * Click Required Actions and Register
-   * Select Register U2F and click Ok
-
-3. Add `Configure U2F` required action to admin user
-
-   * Go to Users
-   * View all users
-   * Click admin
-   * In Required User Actions add Register U2F
-
-4. Logout
-
-5. Login as admin and configure U2F when requested
-
-6. Logout
-
-7. Login again and you should now be requested to touch the U2F token to continue
+Once the user discloses the credential the SPI verifies it and then continues with the OIDC authentication (as was originally requested) by inserting in the OIDC authorization token then claims aforementioned VC attributes. 
